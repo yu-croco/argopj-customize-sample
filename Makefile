@@ -7,8 +7,9 @@ helm-upgrade:
 show-password:
 	kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2
 
-.PHONY:port-forward
-port-forward:
+.PHONY:show-dashboard
+show-dashboard:
+	open http://localhost:8080/ &
 	kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 .PHONY:update-helm-dependencies
