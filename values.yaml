@@ -1,0 +1,9 @@
+argo-cd:
+  controller:
+    serviceAccount:
+      create: false
+      name: argocd-sa
+  server:
+    serviceAccount:
+      create: false
+      name: argocd-sa
